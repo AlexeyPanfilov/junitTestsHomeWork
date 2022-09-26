@@ -1,7 +1,6 @@
 import org.example.accounts.Account;
 import org.example.accounts.CheckingAccount;
 import org.example.accounts.CreditAccount;
-import org.example.accounts.SavingsAccount;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,35 +11,35 @@ public class AccountsTest {
     private Account creditAccount = new CreditAccount();
 
     @Test
-    @DisplayName("Проверка установки допустимого баланса дебетового счета")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° СѓСЃС‚Р°РЅРѕРІРєРё РґРѕРїСѓСЃС‚РёРјРѕРіРѕ Р±Р°Р»Р°РЅСЃР° РґРµР±РµС‚РѕРІРѕРіРѕ СЃС‡РµС‚Р°")
     void setCheckingBalance () {
         checkingAccount.setAccountBalance(1000);
         Assertions.assertEquals(1000, checkingAccount.getAccountBalance());
     }
 
     @Test
-    @DisplayName("Проверка установки недопустимого баланса дебетового счета")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° СѓСЃС‚Р°РЅРѕРІРєРё РЅРµРґРѕРїСѓСЃС‚РёРјРѕРіРѕ Р±Р°Р»Р°РЅСЃР° РґРµР±РµС‚РѕРІРѕРіРѕ СЃС‡РµС‚Р°")
     void setCheckingBalanceMinus () {
         checkingAccount.setAccountBalance(-1000);
         Assertions.assertEquals(0, checkingAccount.getAccountBalance());
     }
 
     @Test
-    @DisplayName("Проверка задания допустимого баланса кредитному счету")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° Р·Р°РґР°РЅРёСЏ РґРѕРїСѓСЃС‚РёРјРѕРіРѕ Р±Р°Р»Р°РЅСЃР° РєСЂРµРґРёС‚РЅРѕРјСѓ СЃС‡РµС‚Сѓ")
     void setCreditBalance () {
         creditAccount.setAccountBalance(-5000);
         Assertions.assertEquals(-5000, creditAccount.getAccountBalance());
     }
 
     @Test
-    @DisplayName("Проверка задания недопустимого баланса кредитному счету")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° Р·Р°РґР°РЅРёСЏ РЅРµРґРѕРїСѓСЃС‚РёРјРѕРіРѕ Р±Р°Р»Р°РЅСЃР° РєСЂРµРґРёС‚РЅРѕРјСѓ СЃС‡РµС‚Сѓ")
     void setCreditBalancePositive () {
         creditAccount.setAccountBalance(5000);
         Assertions.assertEquals(0, creditAccount.getAccountBalance());
     }
 
     @Test
-    @DisplayName("Проверка задания имени владельца кредитному счету")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° Р·Р°РґР°РЅРёСЏ РёРјРµРЅРё РІР»Р°РґРµР»СЊС†Р° РєСЂРµРґРёС‚РЅРѕРјСѓ СЃС‡РµС‚Сѓ")
     void setCreditName () {
         creditAccount.setOwnerName("I'm almost java guru");
         Assertions.assertEquals("I'm almost java guru", creditAccount.getOwnerName());
